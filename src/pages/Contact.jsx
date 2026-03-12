@@ -57,9 +57,10 @@ const Contact = () => {
                   Our Workshop
                 </h3>
                 <p className="text-stone-500 text-sm mt-1 leading-relaxed">
-                  123 Artisan Lane, Pottery District
+                  129, Kartik building, next to Kuber building, Opposite to
+                  <br></br>
+                  Lakshmi Industry, Andheri West, Mumbai, Maharashtra 400065
                   <br />
-                  New York, NY 10001
                 </p>
               </div>
             </div>
@@ -73,9 +74,8 @@ const Contact = () => {
                   Email Us
                 </h3>
                 <p className="text-stone-500 text-sm mt-1 leading-relaxed">
-                  support@artisan-crafts.com
+                  haanjicraftsbykirti@gmail.com
                   <br />
-                  sales@artisan-crafts.com
                 </p>
               </div>
             </div>
@@ -89,9 +89,8 @@ const Contact = () => {
                   Call Us
                 </h3>
                 <p className="text-stone-500 text-sm mt-1 leading-relaxed">
-                  +1 (555) 123-4567
+                  +918521735526
                   <br />
-                  +1 (555) 987-6543
                 </p>
               </div>
             </div>

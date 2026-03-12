@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { BsHandbag, BsHeart, BsStarFill } from "react-icons/bs";
 
@@ -9,7 +8,7 @@ const products = [
     name: "Ceramic Vase",
     price: "$129",
     category: "Ceramics",
-    img: "/41.jpg", // Updated
+    img: "/41.jpg",
     badge: "New",
   },
   {
@@ -17,7 +16,7 @@ const products = [
     name: "Leather Journal",
     price: "$45",
     category: "Leather",
-    img: "/42.jpg", // Updated
+    img: "/42.jpg",
     badge: "Bestseller",
   },
   {
@@ -25,7 +24,7 @@ const products = [
     name: "Woven Basket",
     price: "$65",
     category: "Textile",
-    img: "/43.jpg", // Updated
+    img: "/43.jpg",
     badge: "",
   },
   {
@@ -33,7 +32,7 @@ const products = [
     name: "Golden Hoops",
     price: "$89",
     category: "Jewelry",
-    img: "/44.jpg", // Updated
+    img: "/44.jpg",
     badge: "Sale",
   },
   {
@@ -41,7 +40,7 @@ const products = [
     name: "Artisan Pot",
     price: "$210",
     category: "Ceramics",
-    img: "/45.jpg", // Updated
+    img: "/45.jpg",
     badge: "",
   },
   {
@@ -49,7 +48,7 @@ const products = [
     name: "Silk Scarf",
     price: "$55",
     category: "Textile",
-    img: "/46.jpg", // Updated
+    img: "/42.jpg",
     badge: "Trending",
   },
   {
@@ -57,7 +56,7 @@ const products = [
     name: "Wooden Bowl",
     price: "$75",
     category: "Wood",
-    img: "/47.jpg", // Updated
+    img: "/47.jpg",
     badge: "",
   },
   {
@@ -65,7 +64,7 @@ const products = [
     name: "Silver Ring",
     price: "$120",
     category: "Jewelry",
-    img: "/48.jpg", // Updated
+    img: "/48.jpg",
     badge: "New",
   },
 ];
@@ -75,7 +74,7 @@ const categories = ["All", "Ceramics", "Leather", "Textile", "Jewelry", "Wood"];
 const ExploreStore = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  // Filter logic (optional, for future use)
+  // Filter logic
   const filteredProducts =
     activeCategory === "All"
       ? products
@@ -88,7 +87,6 @@ const ExploreStore = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold italic font-serif tracking-tight mb-4">
             Our{" "}
-            {/* Updated: Vibrant Logo Mix Gradient (Right to Left) */}
             <span className="text-transparent bg-clip-text bg-gradient-to-l from-rose-600 via-orange-500 to-emerald-600">
               Collections
             </span>
@@ -132,12 +130,12 @@ const ExploreStore = () => {
                   <div
                     className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold shadow ${
                       product.badge === "Sale"
-                        ? "bg-rose-500 text-white" // Rose (Flower)
+                        ? "bg-rose-500 text-white"
                         : product.badge === "New"
-                          ? "bg-stone-800 text-white" // Stone (Classic)
+                          ? "bg-stone-800 text-white"
                           : product.badge === "Trending"
-                            ? "bg-emerald-600 text-white" // Emerald (Leaves)
-                            : "bg-orange-500 text-white" // Bestseller to Orange (Warmth)
+                            ? "bg-emerald-600 text-white"
+                            : "bg-orange-500 text-white"
                     }`}
                   >
                     {product.badge}
@@ -155,7 +153,7 @@ const ExploreStore = () => {
                 </div>
               </div>
 
-              {/* Card Info */}
+              {/* Card Info - Price Removed */}
               <div className="px-2">
                 <p className="text-xs text-stone-400 uppercase tracking-widest mb-1">
                   {product.category}
@@ -168,9 +166,7 @@ const ExploreStore = () => {
                     <BsStarFill className="w-3 h-3" />
                   </div>
                 </div>
-                <p className="text-rose-700 font-bold mt-1">
-                  {product.price}.00
-                </p>
+                {/* Price line removed from here */}
               </div>
             </div>
           ))}

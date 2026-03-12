@@ -17,70 +17,55 @@ const Collections = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-stone-50 py-20 px-4 lg:px-12 font-sans text-stone-900 relative overflow-hidden">
-      {/* CSS ANIMATIONS FOR CIRCLES */}
-      <style jsx>{`
+    <section className="min-h-screen bg-stone-50 py-12 sm:py-20 px-4 lg:px-12 font-sans text-stone-900 relative overflow-hidden">
+      {/* CSS ANIMATIONS FOR CIRCLES - Kept minimal as keyframes cannot be pure utilities */}
+      <style>{`
         @keyframes slideRight {
-          0% {
-            transform: translateX(-20%) translateZ(0);
-          }
-          50% {
-            transform: translateX(10%) translateZ(0);
-          }
-          100% {
-            transform: translateX(-20%) translateZ(0);
-          }
+          0% { transform: translateX(-20%) translateZ(0); }
+          50% { transform: translateX(10%) translateZ(0); }
+          100% { transform: translateX(-20%) translateZ(0); }
         }
         @keyframes slideLeft {
-          0% {
-            transform: translateX(20%) translateZ(0);
-          }
-          50% {
-            transform: translateX(-10%) translateZ(0);
-          }
-          100% {
-            transform: translateX(20%) translateZ(0);
-          }
+          0% { transform: translateX(20%) translateZ(0); }
+          50% { transform: translateX(-10%) translateZ(0); }
+          100% { transform: translateX(20%) translateZ(0); }
         }
-        .circle-slider-right {
-          animation: slideRight 15s ease-in-out infinite;
-        }
-        .circle-slider-left {
-          animation: slideLeft 18s ease-in-out infinite;
-        }
+        .circle-slider-right { animation: slideRight 15s ease-in-out infinite; }
+        .circle-slider-left { animation: slideLeft 18s ease-in-out infinite; }
       `}</style>
 
-      {/* BACKGROUND: 2 CIRCLE TYPE SLIDER ANIMATIONS */}
+      {/* BACKGROUND: 2 CIRCLE TYPE SLIDER ANIMATIONS - Using standard Tailwind where possible */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Circle 1: Rose/Orange Gradient (Flowers & Warmth) - Slides Left to Right */}
-        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-gradient-to-br from-rose-400 to-orange-300 rounded-full blur-[120px] opacity-30 circle-slider-right"></div>
+        {/* Circle 1: Rose/Orange Gradient */}
+        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-gradient-to-br from-rose-400 to-orange-300 rounded-full blur-[120px] opacity-30 circle-slider-right hidden sm:block"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-[90vw] h-[90vw] bg-gradient-to-br from-rose-400 to-orange-300 rounded-full blur-[100px] opacity-20 circle-slider-right sm:hidden"></div>
 
-        {/* Circle 2: Emerald/Teal Gradient (Leaves & Nature) - Slides Right to Left */}
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-gradient-to-bl from-emerald-300 to-teal-400 rounded-full blur-[120px] opacity-30 circle-slider-left"></div>
+        {/* Circle 2: Emerald/Teal Gradient */}
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-gradient-to-bl from-emerald-300 to-teal-400 rounded-full blur-[120px] opacity-30 circle-slider-left hidden sm:block"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[80vw] h-[80vw] bg-gradient-to-bl from-emerald-300 to-teal-400 rounded-full blur-[100px] opacity-20 circle-slider-left sm:hidden"></div>
       </div>
 
       <div className="container mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tight mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-stone-900 tracking-tight mb-4">
             Explore{" "}
             <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-l from-rose-600 via-orange-500 to-emerald-600">
               Collections
             </span>
           </h1>
-          <p className="mt-4 text-stone-500 text-lg max-w-2xl mx-auto">
+          <p className="mt-4 text-stone-500 text-base sm:text-lg max-w-2xl mx-auto">
             Curated categories of our finest handcrafted goods.
           </p>
         </div>
 
-        {/* GRID: 2 Rows x 5 Columns (Desktop) */}
-        {/* Responsive: 2 cols (mobile) -> 3 cols (tablet) -> 5 cols (desktop) */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {/* GRID: Responsive classes */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           {collections.map((item) => (
             <Link
               to={`/collections/${item.id}`}
               key={item.id}
-              className="group relative h-[300px] cursor-pointer bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-rose-500/20 transition-all duration-300 hover:-translate-y-2 border border-stone-100"
+              className="group relative h-80 cursor-pointer bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-rose-500/20 transition-all duration-300 hover:-translate-y-2 border border-stone-100"
             >
               {/* Image */}
               <div className="relative h-[65%] w-full overflow-hidden">

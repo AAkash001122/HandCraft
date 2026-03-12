@@ -53,7 +53,7 @@ const GetEnquiry = () => {
                   <div>
                     <p className="font-semibold text-stone-800">Email Us</p>
                     <p className="text-stone-500 text-sm">
-                      support@artisan-crafts.com
+                      haanjicraftsbykirti@gmail.com
                     </p>
                   </div>
                 </div>
@@ -64,7 +64,7 @@ const GetEnquiry = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-stone-800">Call Us</p>
-                    <p className="text-stone-500 text-sm">+1 (555) 123-4567</p>
+                    <p className="text-stone-500 text-sm">+918521735526 </p>
                   </div>
                 </div>
 
@@ -77,7 +77,9 @@ const GetEnquiry = () => {
                       Visit Workshop
                     </p>
                     <p className="text-stone-500 text-sm">
-                      123 Artisan Lane, Pottery District, NY
+                      129, Kartik building, next to Kuber building, Opposite to
+                      <br></br>
+                      Lakshmi Industry, Andheri West, Mumbai, Maharashtra 400065
                     </p>
                   </div>
                 </div>
@@ -99,7 +101,7 @@ const GetEnquiry = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-rose-500 transition-colors"
-                    placeholder="John Doe"
+                    placeholder="Enter Name here...."
                   />
                 </div>
                 <div>
@@ -113,7 +115,7 @@ const GetEnquiry = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-rose-500 transition-colors"
-                    placeholder="john@example.com"
+                    placeholder="Enter Gmail here...."
                   />
                 </div>
               </div>
@@ -128,7 +130,7 @@ const GetEnquiry = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-rose-500 transition-colors"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="Enter Phone no. here...."
                 />
               </div>
 

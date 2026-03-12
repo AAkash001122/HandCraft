@@ -19,11 +19,11 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div className="relative">
-            <div className="absolute -top-6 -left-6 w-24 h-24 border-t-4 border-l-4 border-rose-500 rounded-tl-3xl"></div>
+            <div className="absolute -top-6 -left-6 w-24 h-14 border-t-4 border-l-4 border-rose-500 rounded-tl-3xl"></div>
             <img
-              src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?q=80&w=1000&auto=format&fit=crop"
+              src="/35.jpg"
               alt="Artisan Working"
-              className="rounded-3xl shadow-2xl w-full relative z-10"
+              className="rounded-3xl shadow-2xl w-full h-96 object-cover relative z-10" // Added h-96 and object-cover
             />
           </div>
 
@@ -58,6 +58,5 @@ const About = () => {
     </section>
   );
 };
-
 
 export default About;

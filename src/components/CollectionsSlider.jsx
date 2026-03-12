@@ -36,18 +36,16 @@ const CollectionsSlider = () => {
   const row2Data = collectionsData.slice(13, 25);
 
   // ============================================================
-  // 2. SCROLL ROW COMPONENT (Handles Auto + Drag)
+  // 2. SCROLL ROW COMPONENT
   // ============================================================
   const InfiniteScrollRow = ({ data, direction }) => {
     const sliderRef = useRef(null);
     const [isPaused, setIsPaused] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
 
-    // Drag State
     const startX = useRef(0);
     const scrollLeft = useRef(0);
 
-    // Set initial scroll position for Right-moving row
     useLayoutEffect(() => {
       const slider = sliderRef.current;
       if (direction === "right" && slider) {
@@ -55,25 +53,20 @@ const CollectionsSlider = () => {
       }
     }, [data, direction]);
 
-    // Auto Scroll Animation Loop
     useEffect(() => {
       const slider = sliderRef.current;
       let animationFrameId;
-      const speed = 1; // Adjust speed here (higher = faster)
+      const speed = 1;
 
       const step = () => {
         if (slider && !isPaused && !isDragging) {
           if (direction === "left") {
-            // Move Left (Scroll Left increases)
             slider.scrollLeft += speed;
-            // Infinite Loop Reset
             if (slider.scrollLeft >= slider.scrollWidth / 2) {
               slider.scrollLeft = 0;
             }
           } else {
-            // Move Right (Scroll Left decreases)
             slider.scrollLeft -= speed;
-            // Infinite Loop Reset
             if (slider.scrollLeft <= 0) {
               slider.scrollLeft = slider.scrollWidth / 2;
             }
@@ -86,7 +79,6 @@ const CollectionsSlider = () => {
       return () => cancelAnimationFrame(animationFrameId);
     }, [isPaused, isDragging, direction]);
 
-    // --- Drag Handlers (Mouse) ---
     const handleMouseDown = (e) => {
       setIsDragging(true);
       startX.current = e.pageX;
@@ -115,7 +107,6 @@ const CollectionsSlider = () => {
       setIsDragging(false);
     };
 
-    // --- Drag Handlers (Touch) ---
     const handleTouchStart = (e) => {
       setIsDragging(true);
       startX.current = e.touches[0].pageX;
@@ -133,7 +124,6 @@ const CollectionsSlider = () => {
       handleMouseUpOrLeave();
     };
 
-    // Combined handler for Mouse Leave
     const handleContainerLeave = () => {
       handleMouseUpOrLeave();
       setIsPaused(false);
@@ -142,7 +132,7 @@ const CollectionsSlider = () => {
     return (
       <div
         ref={sliderRef}
-        className="flex gap-6 overflow-x-auto cursor-grab active:cursor-grabbing mask-gradient scrollbar-hide select-none"
+        className="flex gap-4 sm:gap-6 overflow-x-auto cursor-grab active:cursor-grabbing mask-gradient scrollbar-hide select-none"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUpOrLeave}
@@ -166,13 +156,12 @@ const CollectionsSlider = () => {
   const Card = ({ item, index }) => {
     return (
       <div
-        className="relative w-[220px] h-[280px] flex-shrink-0 rounded-2xl bg-white border border-stone-200 shadow-sm hover:shadow-[0_10px_30px_-10px_rgba(244,63,94,0.25)] hover:border-rose-300 transition-all duration-500 hover:-translate-y-2 overflow-hidden group/card cursor-pointer"
+        className="relative w-[70%] sm:w-[60%] md:w-[48%] lg:w-64 h-64 sm:h-72 md:h-80 lg:h-80 flex-shrink-0 rounded-2xl bg-white border border-stone-200 shadow-sm hover:shadow-[0_10px_30px_-10px_rgba(244,63,94,0.25)] hover:border-rose-300 transition-all duration-500 hover:-translate-y-2 overflow-hidden group/card cursor-pointer"
         style={{
           animation: `floatCard 6s ease-in-out infinite`,
           animationDelay: `${index * 0.3}s`,
         }}
       >
-        {/* Image Area */}
         <div className="h-[65%] w-full overflow-hidden bg-stone-100 pointer-events-none">
           <img
             src={item.img}
@@ -181,19 +170,17 @@ const CollectionsSlider = () => {
           />
         </div>
 
-        {/* Content Area */}
-        <div className="h-[35%] p-4 flex flex-col justify-center relative z-10 bg-white pointer-events-none">
-          <h3 className="text-stone-900 font-bold text-lg truncate">
+        <div className="h-[35%] p-3 sm:p-4 flex flex-col justify-center relative z-10 bg-white pointer-events-none">
+          <h3 className="text-sm sm:text-base md:text-lg text-stone-900 font-bold truncate">
             {item.title}
           </h3>
-          <p className="text-rose-600 text-xs font-semibold uppercase tracking-wider mt-1">
+          <p className="text-[10px] sm:text-xs text-rose-600 font-semibold uppercase tracking-wider mt-1">
             Handcrafted
           </p>
 
-          {/* Hover Button */}
-          <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-stone-800 text-white flex items-center justify-center opacity-0 translate-y-2 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 shadow-lg hover:bg-rose-600 pointer-events-auto">
+          <div className="absolute bottom-2 sm:bottom-3 right-2 sm:right-3 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-stone-800 text-white flex items-center justify-center opacity-0 translate-y-2 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 shadow-lg hover:bg-rose-600 pointer-events-auto">
             <svg
-              className="w-3 h-3"
+              className="w-2.5 h-2.5 sm:w-3 sm:h-3"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -215,44 +202,38 @@ const CollectionsSlider = () => {
   // 4. MAIN RENDER
   // ============================================================
   return (
-    <section className="py-20 bg-stone-50 overflow-hidden relative select-none">
-      {/* Background Decorative Blobs - Matching Theme */}
-      <div className="absolute top-10 left-0 w-[500px] h-[500px] bg-rose-200 rounded-full blur-[120px] opacity-30 pointer-events-none"></div>
-      <div className="absolute bottom-10 right-0 w-[500px] h-[500px] bg-amber-100 rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+    <section className="py-12 sm:py-20 bg-stone-50 overflow-hidden relative select-none">
+      {/* Responsive Blobs using standard scale */}
+      <div className="absolute top-10 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-rose-200 rounded-full blur-[80px] sm:blur-[120px] opacity-30 pointer-events-none"></div>
+      <div className="absolute bottom-10 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-amber-100 rounded-full blur-[80px] sm:blur-[120px] opacity-40 pointer-events-none"></div>
 
-      {/* Header */}
-      <div className="container mx-auto px-4 mb-12 relative z-10 pointer-events-none">
+      <div className="container mx-auto px-4 mb-8 sm:mb-12 relative z-10 pointer-events-none">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-stone-900 tracking-tight mb-4">
             Explore Our <br />
-            {/* UPDATED: Vibrant Logo Mix Gradient (Left to Right) */}
             <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-orange-500 to-emerald-600">
               Collections
             </span>
           </h2>
-          <p className="text-stone-500 max-w-xl mx-auto">
+          <p className="text-stone-500 max-w-xl mx-auto text-sm sm:text-base">
             Discover unique handcrafted treasures made with love. <br />
-            <span className="text-xs text-rose-500 mt-2 block opacity-70">
+            {/* <span className="text-[10px] sm:text-xs text-rose-500 mt-2 block opacity-70">
               (Drag to slide)
-            </span>
+            </span> */}
           </p>
         </div>
       </div>
 
-      <div className="space-y-8 relative z-10 w-full">
-        {/* ROW 1: Moves Left */}
+      <div className="space-y-6 sm:space-y-8 relative z-10 w-full">
         <div className="w-full">
           <InfiniteScrollRow data={row1Data} direction="left" />
         </div>
-
-        {/* ROW 2: Moves Right */}
         <div className="w-full">
           <InfiniteScrollRow data={row2Data} direction="right" />
         </div>
       </div>
 
-      {/* STYLES */}
-      <style jsx global>{`
+      <style>{`
         @keyframes floatCard {
           0%,
           100% {
@@ -278,7 +259,6 @@ const CollectionsSlider = () => {
             transparent
           );
         }
-        /* Hide Scrollbar but keep functionality */
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
