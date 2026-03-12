@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { BsHandbag, BsHeart, BsStarFill } from "react-icons/bs";
 
@@ -8,7 +9,7 @@ const products = [
     name: "Ceramic Vase",
     price: "$129",
     category: "Ceramics",
-    img: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?q=80&w=600&auto=format&fit=crop",
+    img: "/41.jpg", // Updated
     badge: "New",
   },
   {
@@ -16,7 +17,7 @@ const products = [
     name: "Leather Journal",
     price: "$45",
     category: "Leather",
-    img: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=600&auto=format&fit=crop",
+    img: "/42.jpg", // Updated
     badge: "Bestseller",
   },
   {
@@ -24,7 +25,7 @@ const products = [
     name: "Woven Basket",
     price: "$65",
     category: "Textile",
-    img: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=600&auto=format&fit=crop",
+    img: "/43.jpg", // Updated
     badge: "",
   },
   {
@@ -32,7 +33,7 @@ const products = [
     name: "Golden Hoops",
     price: "$89",
     category: "Jewelry",
-    img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop",
+    img: "/44.jpg", // Updated
     badge: "Sale",
   },
   {
@@ -40,7 +41,7 @@ const products = [
     name: "Artisan Pot",
     price: "$210",
     category: "Ceramics",
-    img: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=600&auto=format&fit=crop",
+    img: "/45.jpg", // Updated
     badge: "",
   },
   {
@@ -48,7 +49,7 @@ const products = [
     name: "Silk Scarf",
     price: "$55",
     category: "Textile",
-    img: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=600&auto=format&fit=crop",
+    img: "/46.jpg", // Updated
     badge: "Trending",
   },
   {
@@ -56,7 +57,7 @@ const products = [
     name: "Wooden Bowl",
     price: "$75",
     category: "Wood",
-    img: "https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?q=80&w=600&auto=format&fit=crop",
+    img: "/47.jpg", // Updated
     badge: "",
   },
   {
@@ -64,7 +65,7 @@ const products = [
     name: "Silver Ring",
     price: "$120",
     category: "Jewelry",
-    img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop",
+    img: "/48.jpg", // Updated
     badge: "New",
   },
 ];
@@ -81,13 +82,14 @@ const ExploreStore = () => {
       : products.filter((p) => p.category === activeCategory);
 
   return (
-    <section className="min-h-screen bg-[#FDFCF8] py-20 px-6 lg:px-12 font-sans text-stone-800">
+    <section className="min-h-screen bg-stone-50 py-20 px-6 lg:px-12 font-sans text-stone-800">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-semibold text-stone-900 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold italic font-serif tracking-tight mb-4">
             Our{" "}
-            <span className="italic font-serif text-amber-700">
+            {/* Updated: Vibrant Logo Mix Gradient (Right to Left) */}
+            <span className="text-transparent bg-clip-text bg-gradient-to-l from-rose-600 via-orange-500 to-emerald-600">
               Collections
             </span>
           </h1>
@@ -130,10 +132,12 @@ const ExploreStore = () => {
                   <div
                     className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold shadow ${
                       product.badge === "Sale"
-                        ? "bg-red-500 text-white"
+                        ? "bg-rose-500 text-white" // Rose (Flower)
                         : product.badge === "New"
-                          ? "bg-white text-stone-800"
-                          : "bg-amber-500 text-white"
+                          ? "bg-stone-800 text-white" // Stone (Classic)
+                          : product.badge === "Trending"
+                            ? "bg-emerald-600 text-white" // Emerald (Leaves)
+                            : "bg-orange-500 text-white" // Bestseller to Orange (Warmth)
                     }`}
                   >
                     {product.badge}
@@ -142,10 +146,10 @@ const ExploreStore = () => {
 
                 {/* Hover Overlay Actions */}
                 <div className="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                  <button className="p-4 bg-white rounded-full text-stone-900 hover:bg-amber-500 hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">
+                  <button className="p-4 bg-white rounded-full text-stone-900 hover:bg-rose-600 hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">
                     <BsHandbag className="w-5 h-5" />
                   </button>
-                  <button className="p-4 bg-white rounded-full text-stone-900 hover:bg-amber-500 hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
+                  <button className="p-4 bg-white rounded-full text-stone-900 hover:bg-rose-600 hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
                     <BsHeart className="w-5 h-5" />
                   </button>
                 </div>
@@ -160,11 +164,11 @@ const ExploreStore = () => {
                   <h3 className="text-lg font-bold text-stone-800">
                     {product.name}
                   </h3>
-                  <div className="flex items-center gap-1 text-amber-500">
+                  <div className="flex items-center gap-1 text-amber-400">
                     <BsStarFill className="w-3 h-3" />
                   </div>
                 </div>
-                <p className="text-amber-700 font-bold mt-1">
+                <p className="text-rose-700 font-bold mt-1">
                   {product.price}.00
                 </p>
               </div>

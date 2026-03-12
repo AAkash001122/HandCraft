@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -14,7 +15,8 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-400 font-sans relative overflow-hidden">
-      <div className="h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
+      {/* Changed Accent Line to Rose (Flower color) */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-rose-500 to-transparent"></div>
 
       <div className="border-b border-stone-800">
         <div className="container mx-auto px-6 lg:px-12 py-16">
@@ -22,7 +24,8 @@ export default function Footer() {
             <div className="text-center md:text-left">
               <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">
                 Join the{" "}
-                <span className="italic font-serif text-amber-500">
+                {/* UPDATED: Applied Vibrant Logo Mix Gradient (Left to Right) matching Hero Section */}
+                <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-orange-500 to-emerald-600">
                   Artisan
                 </span>{" "}
                 Club
@@ -34,16 +37,17 @@ export default function Footer() {
             </div>
 
             <div className="w-full md:w-auto">
-              <form className="flex items-center bg-stone-800 p-2 rounded-full border border-stone-700 focus-within:border-amber-500 transition-colors">
+              <form className="flex items-center bg-stone-800 p-2 rounded-full border border-stone-700 focus-within:border-rose-500 transition-colors">
                 <BsEnvelope className="w-5 h-5 ml-4 text-stone-500" />
                 <input
                   type="email"
                   placeholder="Enter your email"
                   className="w-full md:w-64 bg-transparent border-none outline-none text-white px-4 py-2 text-sm placeholder-stone-600"
                 />
+                {/* Changed Button to Vibrant Gradient */}
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-amber-600 text-white text-sm font-bold rounded-full hover:bg-amber-500 transition-colors flex items-center gap-2 shadow-lg shadow-amber-900/20"
+                  className="px-6 py-3 bg-gradient-to-r from-rose-600 to-orange-500 text-white text-sm font-bold rounded-full hover:shadow-xl hover:shadow-rose-500/30 transition-all duration-300 flex items-center gap-2"
                 >
                   Subscribe
                   <BsArrowRight />
@@ -59,10 +63,12 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6 group">
               <div className="w-10 h-10 bg-stone-800 group-hover:bg-stone-700 rounded-full flex items-center justify-center transition-colors">
-                <HiSparkles className="text-amber-500 w-5 h-5" />
+                {/* Changed Icon Color to Rose */}
+                <HiSparkles className="text-rose-500 w-5 h-5" />
               </div>
-              <span className="text-2xl font-bold text-white tracking-tight">
-                HandCrafte<span className="text-amber-500">.</span>
+              {/* Changed Brand Text to Stone 100 (Softer) and Accent to Rose */}
+              <span className="text-2xl font-bold text-stone-100 tracking-tight">
+                HandCrafte<span className="text-rose-500">.</span>
               </span>
             </Link>
             <p className="text-stone-500 leading-relaxed mb-6 max-w-sm">
@@ -72,25 +78,25 @@ export default function Footer() {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-10 h-10 bg-stone-800 hover:bg-amber-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+                className="w-10 h-10 bg-stone-800 hover:bg-rose-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
               >
                 <BsFacebook className="w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-stone-800 hover:bg-amber-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+                className="w-10 h-10 bg-stone-800 hover:bg-rose-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
               >
                 <BsInstagram className="w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-stone-800 hover:bg-amber-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+                className="w-10 h-10 bg-stone-800 hover:bg-rose-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
               >
                 <BsTwitter className="w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-stone-800 hover:bg-amber-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+                className="w-10 h-10 bg-stone-800 hover:bg-rose-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
               >
                 <BsPinterest className="w-4 h-4" />
               </a>
@@ -105,7 +111,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   New Arrivals
                 </a>
@@ -113,7 +119,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Best Sellers
                 </a>
@@ -121,7 +127,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Pottery
                 </a>
@@ -129,7 +135,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Textiles
                 </a>
@@ -137,7 +143,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Jewelry
                 </a>
@@ -153,7 +159,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   FAQ
                 </a>
@@ -161,7 +167,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Shipping Info
                 </a>
@@ -169,7 +175,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Returns
                 </a>
@@ -177,7 +183,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Contact Us
                 </a>
@@ -185,7 +191,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Track Order
                 </a>
@@ -201,7 +207,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   About Us
                 </a>
@@ -209,7 +215,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Our Artisans
                 </a>
@@ -217,7 +223,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Careers
                 </a>
@@ -225,7 +231,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Privacy Policy
                 </a>
@@ -233,7 +239,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-amber-500 transition-colors text-sm"
+                  className="hover:text-rose-400 transition-colors text-sm"
                 >
                   Terms of Service
                 </a>
@@ -247,7 +253,7 @@ export default function Footer() {
         <div className="container mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-stone-600">
           <p>© 2024 Handcrafted Goods. All Rights Reserved.</p>
           <p className="mt-2 md:mt-0">
-            Crafted with <span className="text-red-500">♥</span> for Art Lovers
+            Crafted with <span className="text-rose-500">♥</span> for Art Lovers
           </p>
         </div>
       </div>

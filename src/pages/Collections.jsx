@@ -17,7 +17,7 @@ const Collections = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-white py-20 px-4 lg:px-12 font-sans text-slate-900 relative overflow-hidden">
+    <section className="min-h-screen bg-stone-50 py-20 px-4 lg:px-12 font-sans text-stone-900 relative overflow-hidden">
       {/* CSS ANIMATIONS FOR CIRCLES */}
       <style jsx>{`
         @keyframes slideRight {
@@ -52,23 +52,23 @@ const Collections = () => {
 
       {/* BACKGROUND: 2 CIRCLE TYPE SLIDER ANIMATIONS */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Circle 1: Violet/Pink Gradient (Slides Left to Right) */}
-        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-full blur-[120px] opacity-30 circle-slider-right"></div>
+        {/* Circle 1: Rose/Orange Gradient (Flowers & Warmth) - Slides Left to Right */}
+        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-gradient-to-br from-rose-400 to-orange-300 rounded-full blur-[120px] opacity-30 circle-slider-right"></div>
 
-        {/* Circle 2: Blue/Indigo Gradient (Slides Right to Left) */}
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-gradient-to-bl from-blue-500 to-indigo-600 rounded-full blur-[120px] opacity-30 circle-slider-left"></div>
+        {/* Circle 2: Emerald/Teal Gradient (Leaves & Nature) - Slides Right to Left */}
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-gradient-to-bl from-emerald-300 to-teal-400 rounded-full blur-[120px] opacity-30 circle-slider-left"></div>
       </div>
 
       <div className="container mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tight mb-4">
             Explore{" "}
-            <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">
+            <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-l from-rose-600 via-orange-500 to-emerald-600">
               Collections
             </span>
           </h1>
-          <p className="mt-4 text-slate-500 text-lg max-w-2xl mx-auto">
+          <p className="mt-4 text-stone-500 text-lg max-w-2xl mx-auto">
             Curated categories of our finest handcrafted goods.
           </p>
         </div>
@@ -80,7 +80,7 @@ const Collections = () => {
             <Link
               to={`/collections/${item.id}`}
               key={item.id}
-              className="group relative h-[300px] cursor-pointer bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-300 hover:-translate-y-2 border border-slate-100"
+              className="group relative h-[300px] cursor-pointer bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-rose-500/20 transition-all duration-300 hover:-translate-y-2 border border-stone-100"
             >
               {/* Image */}
               <div className="relative h-[65%] w-full overflow-hidden">
@@ -94,15 +94,15 @@ const Collections = () => {
 
               {/* Text Content */}
               <div className="p-4 relative h-[35%] flex flex-col justify-center">
-                <h3 className="text-sm font-bold text-slate-800 leading-tight group-hover:text-violet-700 transition-colors truncate">
+                <h3 className="text-sm font-bold text-stone-800 leading-tight group-hover:text-rose-700 transition-colors truncate">
                   {item.name}
                 </h3>
                 <div className="flex items-center justify-between mt-2">
-                  <p className="text-[10px] font-semibold text-slate-400">
+                  <p className="text-[10px] font-semibold text-stone-400">
                     {item.count}
                   </p>
-                  <div className="w-6 h-6 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-violet-600 transition-colors shadow-sm">
-                    {/* <BsArrowRight className="w-3 h-3 text-slate-400 group-hover:text-white" /> */}
+                  <div className="w-6 h-6 rounded-full bg-stone-50 flex items-center justify-center group-hover:bg-rose-600 transition-colors shadow-sm">
+                    {/* <BsArrowRight className="w-3 h-3 text-stone-400 group-hover:text-white" /> */}
                   </div>
                 </div>
               </div>
