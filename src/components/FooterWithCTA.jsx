@@ -1,169 +1,261 @@
-
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+
 import { HiSparkles } from "react-icons/hi";
-import { BsHandbag, BsX } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsInstagram,
+  BsTwitter,
+  BsPinterest,
+  BsEnvelope,
+  BsArrowRight,
+} from "react-icons/bs";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function Footer() {
   return (
-    <nav className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-100 shadow-sm">
-      <div className="container mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
-        
-        {/* Logo Area */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="flex items-center">
-            <img
-              src="/logocraft.png"
-              alt="HandCraft Logo"
-              className="h-14 md:h-16 w-auto max-w-[120px] object-contain"
-            />
-          </div>
-        </Link>
+    <footer className="bg-stone-900 text-stone-400 font-sans relative overflow-hidden">
+      {/* Changed Accent Line to Rose (Flower color) */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-rose-500 to-transparent"></div>
 
-    
-        <div className="hidden md:flex gap-6 lg:gap-8 text-sm font-medium text-stone-600">
-          <Link
-            to="/"
-            className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
-          >
-            About
-          </Link>
-          <Link
-            to="/collections"
-            className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
-          >
-            Collections
-          </Link>
-          <Link
-            to="/crafts"
-            className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
-          >
-            Crafts
-          </Link>
-          <Link
-            to="/contact"
-            className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
-          >
-            Contact
-          </Link>
-        </div>
-
-      
-        <div className="flex items-center gap-4">
-       
-          <button className="relative p-2 group hidden sm:block">
-            <BsHandbag className="w-5 h-5 text-stone-700 group-hover:text-rose-600 group-hover:scale-110 transition-all duration-300" />
-            <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-rose-500 rounded-full animate-pulse border-2 border-white"></span>
-          </button>
-
-       
-          <Link to="/login">
-            <button className="hidden sm:block px-6 py-2 bg-gradient-to-r from-rose-600 to-orange-500 text-white text-sm font-bold rounded-full hover:shadow-xl hover:shadow-rose-500/40 transition-all duration-300 transform hover:-translate-y-0.5">
-              Sign In
-            </button>
-          </Link>
-
-  
-          <button
-            className="md:hidden p-2 text-stone-700 hover:text-rose-600 transition-colors"
-            onClick={() => setIsOpen(true)}
-          >
-            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {/* ========================================== */}
-      {/* MOBILE MENU DRAWER (FULLY RESPONSIVE) */}
-      {/* ========================================== */}
-      <div
-        className={`fixed inset-0 z-[60] transition-all duration-300 md:hidden ${
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-        }`}
-      >
-     
-        <div
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-          onClick={() => setIsOpen(false)}
-        ></div>
-
-       
-        <div
-          className={`absolute right-0 top-0 h-full w-[80%] max-w-sm bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-   
-          <div className="flex justify-between items-center p-5 border-b border-stone-100">
-            <div className="flex items-center gap-2">
-              <img src="/logocraft.png" alt="Logo" className="h-8 w-auto object-contain" />
+      <div className="border-b border-stone-800">
+        <div className="container mx-auto px-6 lg:px-12 py-16">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">
+                Join the{" "}
+                {/* UPDATED: Applied Vibrant Logo Mix Gradient (Left to Right) matching Hero Section */}
+                <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-orange-500 to-emerald-600">
+                  Artisan
+                </span>{" "}
+                Club
+              </h3>
+              <p className="mt-2 text-stone-500 max-w-md">
+                Subscribe to get special offers, free giveaways, and
+                once-in-a-lifetime deals.
+              </p>
             </div>
-            <button onClick={() => setIsOpen(false)} className="p-2 text-stone-500 hover:text-rose-600 transition-colors">
-              <BsX className="w-6 h-6" />
-            </button>
-          </div>
 
-          {/* Mobile Links (Scrollable if needed) */}
-          <div className="flex flex-col p-6 space-y-6 h-[calc(100%-70px)] overflow-y-auto">
-            <Link
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-serif font-bold text-stone-800 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 pb-2 border-b border-transparent hover:border-stone-100"
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-serif font-bold text-stone-800 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 pb-2 border-b border-transparent hover:border-stone-100"
-            >
-              About
-            </Link>
-            <Link
-              to="/collections"
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-serif font-bold text-stone-800 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 pb-2 border-b border-transparent hover:border-stone-100"
-            >
-              Collections
-            </Link>
-            <Link
-              to="/crafts"
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-serif font-bold text-stone-800 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 pb-2 border-b border-transparent hover:border-stone-100"
-            >
-              Crafts
-            </Link>
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-serif font-bold text-stone-800 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-rose-600 hover:via-orange-500 hover:to-emerald-600 transition-all duration-300 pb-2 border-b border-transparent hover:border-stone-100"
-            >
-              Contact
-            </Link>
-
-            {/* Mobile Sign In Button (Full Width) */}
-            <div className="pt-6 mt-4">
-               <Link to="/login" onClick={() => setIsOpen(false)}>
-                  <button className="w-full py-4 bg-stone-900 text-white rounded-full text-sm font-bold uppercase tracking-wider hover:bg-stone-800 transition-all duration-300 shadow-lg flex items-center justify-center gap-2">
-                    Sign In
-                  </button>
-               </Link>
+            <div className="w-full md:w-auto">
+              <form className="flex items-center bg-stone-800 p-2 rounded-full border border-stone-700 focus-within:border-rose-500 transition-colors">
+                <BsEnvelope className="w-5 h-5 ml-4 text-stone-500" />
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full md:w-64 bg-transparent border-none outline-none text-white px-4 py-2 text-sm placeholder-stone-600"
+                />
+                {/* Changed Button to Vibrant Gradient */}
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-gradient-to-r from-rose-600 to-orange-500 text-white text-sm font-bold rounded-full hover:shadow-xl hover:shadow-rose-500/30 transition-all duration-300 flex items-center gap-2"
+                >
+                  Subscribe
+                  <BsArrowRight />
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </nav>
+
+      <div className="container mx-auto px-6 lg:px-12 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          <div className="lg:col-span-2">
+            <Link to="/" className="flex items-center gap-2 mb-6 group">
+              <div className="w-10 h-10 bg-stone-800 group-hover:bg-stone-700 rounded-full flex items-center justify-center transition-colors">
+                {/* Changed Icon Color to Rose */}
+                <HiSparkles className="text-rose-500 w-5 h-5" />
+              </div>
+              {/* Changed Brand Text to Stone 100 (Softer) and Accent to Rose */}
+              <span className="text-2xl font-bold text-stone-100 tracking-tight">
+                Craft Around US<span className="text-rose-500">.</span>
+              </span>
+            </Link>
+            <p className="text-stone-500 leading-relaxed mb-6 max-w-sm">
+              Discover the beauty of handmade. We connect master craftsmen with
+              discerning collectors worldwide.
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="#"
+                className="w-10 h-10 bg-stone-800 hover:bg-rose-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <BsFacebook className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-stone-800 hover:bg-rose-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <BsInstagram className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-stone-800 hover:bg-rose-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <BsTwitter className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-stone-800 hover:bg-rose-600 text-stone-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <BsPinterest className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">
+              Quick Shop
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  New Arrivals
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Best Sellers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Pottery
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Textiles
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Jewelry
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">
+              Support
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Shipping Info
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Returns
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Track Order
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">
+              Company
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Our Artisans
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-rose-400 transition-colors text-sm"
+                >
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-stone-800">
+        <div className="container mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-stone-600">
+          <p>© Craft Around us All Rights Reserved.</p>
+          <p className="mt-2 md:mt-0">
+            Crafted with <span className="text-rose-500">♥</span> for Art Lovers
+          </p>
+        </div>
+      </div>
+    </footer>
   );
-};
-
-export default Navbar;
+}
