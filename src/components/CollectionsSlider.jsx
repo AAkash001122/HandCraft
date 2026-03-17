@@ -30,7 +30,7 @@ const CollectionsSlider = () => {
     { id: 11, title: "Gift set -499", img: "25.jpg" },
     { id: 12, title: "Luxury hamper for bride ", img: "26.jpg" },
     { id: 13, title: "Basket hampers price 699/-", img: "27.jpg" },
-    { id: 14, title: "Rug Making", img: "28.jpg" },
+    { id: 14, title: "Customised toran at just 299/-", img: "28.jpg" },
     { id: 15, title: "Glass Blowing", img: "29.jpg" },
     { id: 16, title: "Customised toran price 699/-", img: "30.jpg" },
     { id: 17, title: "Roli chawal plate 79/-", img: "31.jpg" },
@@ -38,9 +38,9 @@ const CollectionsSlider = () => {
     { id: 19, title: "Miniature Art", img: "33.jpg" },
     { id: 20, title: "Golden hanging cage with peacock 699/-", img: "34.jpg" },
     { id: 21, title: "Designer tea light holder price 999/-", img: "35.jpg" },
-    { id: 22, title: "Block Print", img: "36.jpg" },
+    { id: 22, title: "Pupprt design tea light holder", img: "36.jpg" },
     { id: 23, title: "Hexagon resin photo frame price 2500/-", img: "37.jpg" },
-    { id: 24, title: "Jute Bags", img: "38.jpg" },
+    { id: 24, title: "Customised resin heart key ring", img: "38.jpg" },
     { id: 25, title: "Customised hamper price 1199/-", img: "39.jpg" },
   ];
 
