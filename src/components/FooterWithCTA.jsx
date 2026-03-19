@@ -69,7 +69,7 @@ export default function Footer() {
             <Link to="/" className="inline-block mb-6 group w-fit">
               <img
                 src="/logocraft.png" // Yahan apni logo ka path lagao (e.g., /images/logo.png)
-                alt="Craft Around US"
+                alt="HandCraft Items US"
                 className="h-16 w-42object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </Link>

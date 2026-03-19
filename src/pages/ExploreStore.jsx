@@ -5,7 +5,7 @@ import { BsHandbag, BsHeart, BsStarFill } from "react-icons/bs";
 const products = [
   {
     id: 1,
-    name: "Ceramic Vase",
+    name: "HandCraft Items",
     price: "$129",
     category: "Ceramics",
     img: "/41.jpg",

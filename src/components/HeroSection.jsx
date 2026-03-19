@@ -154,7 +154,7 @@ export default function HeroSection() {
                       <BsStarFill className="w-2 h-2 sm:w-3 sm:h-3" />
                     </div>
                     <p className="font-bold text-stone-900 text-xs sm:text-sm">
-                      Ceramic Vase
+                      HandCraft Items
                     </p>
                   </div>
                   <button className="p-1.5 sm:p-2 bg-stone-800 text-white rounded-full ml-1 sm:ml-2 hover:bg-gradient-to-r hover:from-rose-600 hover:to-orange-500 transition-colors">
@@ -384,9 +384,9 @@ export default function HeroSection() {
                       ))}
                     </div>
                     <p className="text-stone-600 leading-relaxed mb-6 text-sm">
-                      "Fast shipping and beautiful packaging. The ceramic vase
-                      arrived in perfect condition. It feels good to support
-                      real artisans."
+                      "Fast shipping and beautiful packaging. The HandCraft
+                      Items arrived in perfect condition. It feels good to
+                      support real artisans."
                     </p>
                   </div>
                   <div className="flex items-center gap-4 pt-4 border-t border-stone-100">
