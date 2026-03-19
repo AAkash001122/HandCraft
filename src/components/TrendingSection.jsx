@@ -33,7 +33,7 @@ const TrendingSection = () => {
     },
     {
       id: 4,
-      title: "Miniature Art",
+      title: "Customised resin heart key ring",
       category: "Art",
       image: "/38.jpg",
       tag: "Hot",
@@ -57,7 +57,7 @@ const TrendingSection = () => {
     },
     {
       id: 7,
-      title: "Block Print",
+      title: "Puppet design tea ligth holder",
       category: "Textile",
       image: "/36.jpg",
       tag: "New",
@@ -73,9 +73,9 @@ const TrendingSection = () => {
     },
     {
       id: 9,
-      title: "Jute Bags",
+      title: "Peacock tealigth holder 299/-",
       category: "Fashion",
-      image: "/38.jpg",
+      image: "/18.jpg",
       tag: "Trending",
       tagColor: "bg-emerald-100 text-emerald-700",
     },
